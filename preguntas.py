@@ -52,11 +52,12 @@ def pregunta_03():
     """
     from collections import Counter
 
-    _c1Column = pd.Series(tbl0['_c1'])
+    _c1Column = tbl0['_c1']
     _c1Column = Counter(_c1Column)
     _c1Column = dict(sorted(_c1Column.items()))
 
-    return _c1Column
+    return pd.Series(_c1Column)
+
 
 
 def pregunta_04():
