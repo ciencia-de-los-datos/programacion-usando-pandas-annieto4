@@ -50,8 +50,13 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
+    from collections import Counter
 
-    return 
+    _c1Column = pd.Series(tbl0['_c1'])
+    _c1Column = Counter(_c1Column)
+    _c1Column = dict(sorted(_c1Column.items()))
+
+    return _c1Column
 
 
 def pregunta_04():
