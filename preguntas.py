@@ -169,7 +169,11 @@ def pregunta_09():
     39   39   E    5  1998-01-26  1998
 
     """
-    return
+    import datetime as dt
+
+    df = tbl0['_c3'].str.split('-', n=1, expand=True)
+    tbl0['year'] = df.iloc[:,[0]]
+    return tbl0 
 
 
 def pregunta_10():
