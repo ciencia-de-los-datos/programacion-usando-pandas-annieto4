@@ -77,7 +77,7 @@ def pregunta_04():
 
     return col_c1_group_c2
 
-print(pregunta_04())
+
 
 def pregunta_05():
     """
@@ -93,7 +93,11 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return
+
+    col_max_c2_by_c1 = tbl0.groupby('_c1')['_c2'].max()
+
+    return col_max_c2_by_c1
+
 
 
 def pregunta_06():
@@ -105,7 +109,9 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    col_uniques_c4 = pd.unique(pd.Series(tbl1['_c4'].str.upper()))
+    col_uniques_c4 = sorted(col_uniques_c4)
+    return col_uniques_c4
 
 
 def pregunta_07():
