@@ -193,7 +193,7 @@ def pregunta_10():
 
     data = tbl0[['_c1','_c2']] 
     data['_c2'] = data['_c2'].apply(lambda x: str(x))
-    data = data.sort_values(['_c2'], ascending=True).groupby(['_c1'], as_index=False).agg({'_c2':':'.join})
+    data = data.sort_values(['_c2'], ascending=True).groupby(['_c1'], as_index=True).agg({'_c2':':'.join})
 
     return data
 
