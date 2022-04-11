@@ -190,7 +190,12 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    return
+
+    data = tbl0[['_c1','_c2']] 
+    data['_c2'] = data['_c2'].apply(lambda x: str(x))
+    data = data.sort_values(['_c2'], ascending=True).groupby(['_c1'], as_index=False).agg({'_c2':':'.join})
+
+    return data
 
 
 def pregunta_11():
