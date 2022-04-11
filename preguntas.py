@@ -214,7 +214,10 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    return
+    data = tbl1
+    data = data.sort_values(['_c4'], ascending=True).groupby(['_c0'], as_index=False).agg({'_c4':','.join})
+    return data
+
 
 
 def pregunta_12():
