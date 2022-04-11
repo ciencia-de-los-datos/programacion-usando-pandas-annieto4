@@ -219,7 +219,6 @@ def pregunta_11():
     return data
 
 
-
 def pregunta_12():
     """
     Construya una tabla que contenga _c0 y una lista separada por ',' de los valores de
@@ -235,7 +234,15 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
-    return
+
+    data = tbl2
+    data['_c5b'] = data['_c5b'].apply(lambda x: str(x))
+    data['_c5'] = data['_c5a'] + ':' + data['_c5b']
+
+    data = data[['_c0', '_c5']]
+    data = data.sort_values(['_c5'], ascending=True).groupby(['_c0'], as_index=False).agg({'_c5':','.join})
+    return data
+
 
 
 def pregunta_13():
