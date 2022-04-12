@@ -259,4 +259,17 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return
+
+    df1 = tbl0[['_c0','_c1']]
+    df2 = tbl2[['_c0','_c5b']]
+
+
+    data = pd.merge(
+        df1,
+        df2,
+        sort=True
+    )
+
+    data = data.groupby('_c1')['_c5b'].sum()
+
+    return data
